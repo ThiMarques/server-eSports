@@ -5,6 +5,8 @@ import { PrismaClient } from "@prisma/client";
 import { convertHourStringToMinutes } from "./utils/convert-hour-string-to-minutes";
 import { convertMinutesToHoursString } from "./utils/covert-minutes-to-hour-string";
 
+import dotenv from 'dotenv/config'
+
 const app = express()
 
 app.use(express.json())
@@ -96,7 +98,4 @@ app.get('/ads/:id/discord', async (request, response) => {
         discord: ad.discord,
     })
 })
-
-app.listen(process.env.PORT || 3333, () => {
-    console.log('http runingss')
-})
+app.listen(process.env.DATA_BASE_KEY || 3333)
