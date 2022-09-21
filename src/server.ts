@@ -5,12 +5,14 @@ import { PrismaClient } from "@prisma/client";
 import { convertHourStringToMinutes } from "./utils/convert-hour-string-to-minutes";
 import { convertMinutesToHoursString } from "./utils/covert-minutes-to-hour-string";
 
-import dotenv from 'dotenv/config'
+import * as dotenv from 'dotenv'
 
 const app = express()
 
 app.use(express.json())
 app.use(cors())
+
+dotenv.config()
 
 
 const prisma = new PrismaClient({
@@ -98,4 +100,4 @@ app.get('/ads/:id/discord', async (request, response) => {
         discord: ad.discord,
     })
 })
-app.listen(3333)
+app.listen(process.env.S3_BUCKET || 3333)
