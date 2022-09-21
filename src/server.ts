@@ -98,4 +98,4 @@ app.get('/ads/:id/discord', async (request, response) => {
         discord: ad.discord,
     })
 })
-app.listen(process.env.DATA_BASE_KEY || 3333)
+app.listen(3333)
