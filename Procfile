@@ -1,1 +1,1 @@
-web: tsnd --exit-child src/server.ts
+web: node ./src/server.ts

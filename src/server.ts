@@ -101,5 +101,5 @@ app.get('/ads/:id/discord', async (request, response) => {
     })
 })
 app.listen(3333, () => {
-    console.log('Http is running !')
+    console.log('Http is running')
 })
