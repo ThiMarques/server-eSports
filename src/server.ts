@@ -100,4 +100,6 @@ app.get('/ads/:id/discord', async (request, response) => {
         discord: ad.discord,
     })
 })
-app.listen(process.env.S3_BUCKET || 3333)
+app.listen(3333, () => {
+    console.log('Http is running !')
+})
